@@ -47,7 +47,7 @@ public class BoardServiceTest {
 
     @After
     public void tearDown() throws Exception {
-        //boardService.deleteAll();
+        boardService.deleteAll();
     }
 
     @Test
@@ -125,7 +125,7 @@ public class BoardServiceTest {
     @Test
     public void 게시글을_수정한다() {
         // arrange (given)
-        int boardNo = boardService.createNew(new Board(0, "타이틀1", "패스워드1", "사진1", "내용1", 5, user1));
+        int boardNo = boardService.createNew(new Board(0, "타이틀1", "패스워드1", null, "내용1", 5, user1));
 
         // act (when)
         boardService.modify(boardNo, "수정 타이틀", null, "내용", 5, "패스워드1", user1.getNo());
@@ -138,7 +138,7 @@ public class BoardServiceTest {
         TestUtil.isEqualAllValueOfUser(modifiedBoard.getWriter(), user1);
     }
 
-    @Test(expected = EmptyResultDataAccessException.class)
+    /*@Test
     public void 게시글을_삭제한다() {
         // arrange (given)
         int boardNo = boardService.createNew(new Board(0, "타이틀1", "패스워드1", "사진1", "내용1", 5, user1));
@@ -150,7 +150,7 @@ public class BoardServiceTest {
         // assert (then)
         assertEquals(boardService.getCount(), currentBoardCount - 1);
         assertNull(boardService.get(boardNo));
-    }
+    }*/
 
     @Test(expected = NoRightOfModifyAndDeleteException.class)
     public void 작성자가_아니면_수정_및_삭제하지_못한다() {
@@ -174,6 +174,20 @@ public class BoardServiceTest {
         // assert (then)
         assertFalse(boardService.isEqualPassword(boardNo, wrongPassword));
         throw new NoRightOfModifyAndDeleteException("게시글의 비밀번호가 일치하지 않습니다.");
+    }
+
+    @Test
+    public void 게시글을_삭제한다() {
+        // arrange (given)
+        int boardNo = boardService.createNew(new Board(0, "타이틀1", "패스워드1", "사진1", "내용1", 5, user1));
+        int currentBoardCount = boardService.getCount();
+
+        // act (when)
+        boardService.delete(boardNo, "패스워드1", user1.getNo());
+
+        // assert (then)
+        assertEquals(boardService.getCount(), currentBoardCount - 1);
+        assertNull(boardService.get(boardNo));
     }
 
     @Test

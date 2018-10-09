@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.midasit.bungae.generator.mapper.NoticeMapper">
-    <resultMap id="NoticeResultMap" type="com.midasit.bungae.admin.board.dto.Notice">
+    <resultMap id="NoticeResultMap" type="com.midasit.bungae.admin.dto.Notice">
         <id column="noticeNo" jdbcType="INTEGER" property="no" />
         <result column="noticeTitle" jdbcType="VARCHAR" property="title" />
         <result column="noticePassword" jdbcType="VARCHAR" property="password" />

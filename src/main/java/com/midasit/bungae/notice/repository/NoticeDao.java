@@ -1,16 +1,12 @@
 package com.midasit.bungae.notice.repository;
 
-import com.midasit.bungae.admin.board.dto.Notice;
-import com.midasit.bungae.board.dto.Board;
+import com.midasit.bungae.admin.dto.Notice;
 import com.midasit.bungae.generator.mapper.NoticeMapper;
 import com.midasit.bungae.user.Gender;
 import com.midasit.bungae.user.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

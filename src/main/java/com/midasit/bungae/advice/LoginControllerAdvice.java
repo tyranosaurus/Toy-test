@@ -31,7 +31,9 @@ public class LoginControllerAdvice  {
 
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
         map.put("ErrorCode", ServerErrorCode.EMPTY_VALUE_OF_FIELD.getValue());
-        map.put("ErrorMessage", messageSource.getMessage("valid.field.empty", new String[] { bindingResult.getFieldErrors().get(0).getField() }, Locale.KOREAN));
+        map.put("ErrorMessage", messageSource.getMessage("valid.field.empty",
+                                                         new String[] { bindingResult.getFieldErrors().get(0).getField() },
+                                                         Locale.KOREAN));
 
         return map;
     }

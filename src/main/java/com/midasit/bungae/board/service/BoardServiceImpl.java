@@ -1,6 +1,6 @@
 package com.midasit.bungae.board.service;
 
-import com.midasit.bungae.admin.board.dto.Notice;
+import com.midasit.bungae.admin.dto.Notice;
 import com.midasit.bungae.board.dto.Board;
 import com.midasit.bungae.board.repository.BoardRepository;
 import com.midasit.bungae.boarddetail.repository.BoardDetailRepository;
@@ -59,7 +59,6 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public int createNew(Board board) {
-        //checkPassword();
         if ( board.getTitle() == null || board.getTitle().length() < 1
                 || board.getPassword() == null || board.getPassword().length() < 1
                 || board.getContent() == null || board.getContent().length() < 1

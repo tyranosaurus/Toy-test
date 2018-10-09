@@ -1,6 +1,6 @@
 package com.midasit.bungae.notice.repository;
 
-import com.midasit.bungae.admin.board.dto.Notice;
+import com.midasit.bungae.admin.dto.Notice;
 
 import java.util.List;
 

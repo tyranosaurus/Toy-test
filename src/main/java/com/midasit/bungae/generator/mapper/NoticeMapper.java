@@ -1,7 +1,7 @@
 package com.midasit.bungae.generator.mapper;
 
 
-import com.midasit.bungae.admin.board.dto.Notice;
+import com.midasit.bungae.admin.dto.Notice;
 import com.midasit.bungae.generator.model.NoticeExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
