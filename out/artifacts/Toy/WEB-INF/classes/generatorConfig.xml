@@ -49,12 +49,17 @@
         </table>-->
 
         <!-- board -->
-        <table schema="toy" tableName="board" domainObjectName="Board">
+        <!--<table schema="toy" tableName="board" domainObjectName="Board">
+            <property name="useActualColumnNames" value="false" />
+            <property name="ignoreQualifiersAtRuntime" value="true" />
+            <generatedKey column="no" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" type="post" />
+        </table>-->
+        <!-- board_user -->
+        <table schema="toy" tableName="board_user" domainObjectName="BoardUser">
             <property name="useActualColumnNames" value="false" />
             <property name="ignoreQualifiersAtRuntime" value="true" />
             <generatedKey column="no" sqlStatement="SELECT LAST_INSERT_ID()" identity="true" type="post" />
         </table>
-        <!-- board_user -->
         <!-- notice -->
     </context>
 
