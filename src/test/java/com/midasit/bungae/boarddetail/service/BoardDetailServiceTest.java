@@ -18,7 +18,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "file:web/WEB-INF/applicationContext_test.xml")
+@ContextConfiguration(locations = "file:web/WEB-INF/applicationContext.xml")
 public class BoardDetailServiceTest {
     @Autowired
     BoardDetailService boardDetailService;

@@ -98,7 +98,7 @@ public class Board {
                 ", image='" + image + '\'' +
                 ", content='" + content + '\'' +
                 ", maxParticipantCount=" + maxParticipantCount +
-                ", writer=" + writer +
+                ", writer=" + writer.toString() +
                 '}';
     }
 }
