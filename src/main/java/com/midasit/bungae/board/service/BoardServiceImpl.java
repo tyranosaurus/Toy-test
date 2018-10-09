@@ -140,7 +140,7 @@ public class BoardServiceImpl implements BoardService {
     public void modifyNotice(int noticeNo, String title, String image, String content, String password, int writerNo) {
         if ( isEqualWriterAtNotice(noticeNo, writerNo) ) {
             if ( isEqualPasswordAtNotice(noticeNo, password) ) {
-                noticeRepository.update(noticeNo, title, null, content, password);
+                noticeRepository.update(new Notice(noticeNo, title, password, null, content, null));
             } else {
                 throw new NotEqualPasswordException("공지사항의 비밀번호가 일치하지 않습니다.");
             }
